@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendar aula experimental · One to One Studio</title>
+    <meta
+      name="description"
+      content="Agende sua aula experimental no One-to-One Studio. Treino individualizado, sem compromisso."
+    />
+    <link rel="icon" href="assets/img/rocket.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- defer: o script só roda depois que o HTML terminou de ser lido -->
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-brand="One-to-One">
+    <!-- Cabeçalho: logo do One to One Studio + menu de navegação -->
+    <header class="site-header">
+      <div class="container nav">
+        <a
+          class="nav-logo"
+          href="index.html"
+          aria-label="One to One Studio — página inicial"
+        >
+          <span class="brand-logo-1to1 nav-1to1" aria-hidden="true">
+            <span class="word">ONE <span class="to">to</span> ONE</span>
+            <span class="studio">STUDIO</span>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Menu principal">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="one-to-one.html">1to1</a></li>
+            <li><a href="pkz.html">PKZ</a></li>
+            <li><a href="planos.html">Planos</a></li>
+            <li class="has-dropdown">
+              <button
+                type="button"
+                class="dropdown-toggle active"
+                aria-expanded="false"
+              >
+                Agendar <span class="chev"></span>
+              </button>
+              <ul class="dropdown">
+                <li>
+                  <a
+                    href="agendar-one-to-one.html"
+                    class="active"
+                    aria-current="page"
+                    >One-to-One</a
+                  >
+                </li>
+                <li><a href="agendar-pkz.html">PKZ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section page-head" style="padding-top: 60px">
+        <img
+          class="deco-chevrons"
+          src="assets/img/chevrons-tall.svg"
+          alt=""
+          width="140"
+          height="150"
+          style="left: 80px; top: 260px"
+        />
+        <!--
+          Formulário de agendamento: o próprio <form> é o grid da página.
+          Os dados ficam em dois fieldsets (dados pessoais e data/horário).
+          A validação é nativa do navegador (required e pattern); o JavaScript
+          só monta o calendário e gera a mensagem de confirmação para o WhatsApp.
+        -->
+        <form
+          class="container schedule"
+          action="#"
+          method="post"
+          data-form="agendar"
+          data-service="uma aula experimental"
+        >
+          <!-- Introdução -->
+          <div class="schedule-intro">
+            <p class="eyebrow">Aula experimental · One-to-One</p>
+            <h1>Agende o seu <span class="hl">treino</span>.</h1>
+            <p>
+              Deixe seus dados, escolha um horário e a nossa equipe confirma com
+              você. Sem compromisso — é a forma de sentir na prática como é
+              treinar de forma individualizada.
+            </p>
+            <ul class="check-list">
+              <li>
+                <span class="chev"></span>Conheça o studio e a metodologia
+              </li>
+              <li>
+                <span class="chev"></span>Treine com um professor da equipe
+              </li>
+              <li>
+                <span class="chev"></span>Receba a proposta de plano depois da
+                aula
+              </li>
+            </ul>
+          </div>
+          <div class="form-card dados">
+            <fieldset>
+              <legend>Seus dados</legend>
+              <div class="field">
+                <label for="ag-nome">Nome completo</label>
+                <input
+                  id="ag-nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Seu nome"
+                  autocomplete="name"
+                  pattern="\s*\S+(\s+\S+)+\s*"
+                  title="Informe nome e sobrenome."
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="ag-whats">WhatsApp</label>
+                <input
+                  id="ag-whats"
+                  name="whatsapp"
+                  type="tel"
+                  placeholder="(21) 90000-0000"
+                  autocomplete="tel"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                  title="Informe o WhatsApp com DDD, no formato (21) 90000-0000."
+                  required
+                />
+              </div>
+              <!-- mensagem de erro preenchida pelo JavaScript -->
+              <p class="erro" aria-live="polite"></p>
+            </fieldset>
+          </div>
+
+          <div class="calendar reveal">
+            <fieldset>
+              <legend>Escolha a data e o horário</legend>
+              <div class="cal-head">
+                <h2 data-cal-title>—</h2>
+                <div class="cal-nav">
+                  <button type="button" class="prev" aria-label="Mês anterior">
+                    <span class="chev"></span>
+                  </button>
+                  <button type="button" class="next" aria-label="Próximo mês">
+                    <span class="chev"></span>
+                  </button>
+                </div>
+              </div>
+              <!-- Calendário do mês: uma linha (tr) por semana -->
+              <table class="cal-table">
+                <thead>
+                  <tr>
+                    <th scope="col" abbr="Domingo">DOM</th>
+                    <th scope="col" abbr="Segunda-feira">SEG</th>
+                    <th scope="col" abbr="Terça-feira">TER</th>
+                    <th scope="col" abbr="Quarta-feira">QUA</th>
+                    <th scope="col" abbr="Quinta-feira">QUI</th>
+                    <th scope="col" abbr="Sexta-feira">SEX</th>
+                    <th scope="col" abbr="Sábado">SÁB</th>
+                  </tr>
+                </thead>
+                <tbody data-cal-days></tbody>
+              </table>
+              <input type="hidden" id="ag-data" name="data" />
+
+              <div class="cal-selected" hidden>
+                <div>
+                  <p class="cal-selected-day"></p>
+                  <p class="cal-selected-info"></p>
+                </div>
+                <span class="pill"></span>
+              </div>
+              <div class="slots-head">
+                <h3>Horários disponíveis</h3>
+                <span data-slots-count></span>
+              </div>
+              <!-- Horários: um input radio por horário, encapsulado no label -->
+              <div class="slots" aria-live="polite"></div>
+            </fieldset>
+          </div>
+
+          <button class="btn btn-primary btn-submit" type="submit">
+            Solicitar aula experimental
+          </button>
+
+          <!-- Mensagem exibida depois do envio -->
+          <div
+            class="form-card form-success"
+            id="agendar-ok"
+            aria-live="polite"
+          >
+            <img
+              class="ok"
+              src="assets/img/check.svg"
+              alt=""
+              width="64"
+              height="64"
+            />
+            <h2>Solicitação enviada!</h2>
+            <p>
+              <span data-summary></span><br />Nossa equipe vai confirmar o
+              horário pelo WhatsApp.
+            </p>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5521972657266"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-whatsapp-confirm
+              ><img
+                src="assets/img/whatsapp.svg"
+                alt=""
+                width="18"
+                height="18"
+              />
+              Confirmar pelo WhatsApp</a
+            >
+            <p style="margin: 18px 0 0">
+              <button
+                type="button"
+                class="link-arrow"
+                data-reset-form="agendar"
+              >
+                Fazer outro agendamento
+              </button>
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Rodapé: contato, links e copyright -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img
+              class="logo"
+              src="assets/img/logo-playmakerz.png"
+              alt="Playmakerz"
+              width="140"
+              height="32"
+              loading="lazy"
+            />
+            <p>
+              Uma empresa, duas formas de aplicar a mesma metodologia.
+              Transformamos potencial em performance — para cada idade e cada
+              esporte.
+            </p>
+            <address class="addr">Barra da Tijuca · Rio de Janeiro</address>
+          </div>
+          <nav aria-labelledby="rodape-marcas">
+            <h2 id="rodape-marcas">Marcas</h2>
+            <ul>
+              <li><a href="one-to-one.html">One-to-One Studio</a></li>
+              <li><a href="pkz.html">PKZ · Playmakerz</a></li>
+              <li><a href="planos.html">Planos</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-acesso">
+            <h2 id="rodape-acesso">Acesso</h2>
+            <ul>
+              <li>
+                <a href="agendar-one-to-one.html">Agendar · One-to-One</a>
+              </li>
+              <li><a href="agendar-pkz.html">Agendar · PKZ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <time datetime="2026">2026</time> PKZ One-to-One. Todos os
+            direitos reservados.
+          </p>
+          <p class="tag">Do potencial à performance</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
