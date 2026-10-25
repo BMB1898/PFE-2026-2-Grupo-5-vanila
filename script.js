@@ -316,3 +316,180 @@ function desenhaMes() {
     corpoTabela.append(linha);
   }
 }
+
+// Mostra o resumo do dia escolhido e os horários como inputs radio
+function desenhaHorarios() {
+  const resumo = calendario.querySelector(".cal-selected");
+  const areaHorarios = calendario.querySelector(".slots");
+  const contador = calendario.querySelector("[data-slots-count]");
+  areaHorarios.textContent = "";
+
+  if (!dataSelecionada) {
+    resumo.hidden = true;
+    contador.textContent = "";
+    const aviso = document.createElement("p");
+    aviso.classList.add("slots-empty");
+    aviso.textContent = "Selecione uma data disponível.";
+    areaHorarios.append(aviso);
+    return;
+  }
+
+  const horarios = horariosDoDia(dataSelecionada);
+  const daManha = horarios.filter(
+    (horario) => Number(horario.slice(0, 2)) < 12,
+  ).length;
+
+  let periodo = "Manhã e tarde";
+  if (daManha === horarios.length) periodo = "Manhã";
+  if (daManha === 0) periodo = "Tarde";
+
+  resumo.hidden = false;
+  resumo.querySelector(".cal-selected-day").textContent =
+    `${dataSelecionada.getDate()} de ${MESES[dataSelecionada.getMonth()]}`;
+  resumo.querySelector(".cal-selected-info").textContent =
+    `${DIAS_DA_SEMANA[dataSelecionada.getDay()]} · ${periodo}`;
+  resumo.querySelector(".pill").textContent =
+    `${horarios.length} ${horarios.length === 1 ? "horário" : "horários"}`;
+  contador.textContent = `${horarios.length} ${horarios.length === 1 ? "opção" : "opções"}`;
+
+  // forEach: cria um <label> com um radio dentro para cada horário
+  horarios.forEach((horario) => {
+    const opcao = document.createElement("label");
+    opcao.classList.add("slot");
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "horario";
+    radio.value = horario;
+    radio.required = true;
+
+    const texto = document.createElement("span");
+    texto.textContent = horario;
+
+    opcao.append(radio, texto);
+    areaHorarios.append(opcao);
+  });
+}
+
+function selecionaData(data) {
+  dataSelecionada = new Date(data);
+  calendario.querySelector('input[name="data"]').value =
+    formataData(dataSelecionada);
+  desenhaMes();
+  desenhaHorarios();
+}
+
+// Volta o calendário para o primeiro dia com vaga
+function reiniciaCalendario() {
+  const primeiro = primeiroDiaDisponivel();
+  if (primeiro) {
+    mesNaTela = new Date(primeiro.getFullYear(), primeiro.getMonth(), 1);
+    selecionaData(primeiro);
+  } else {
+    dataSelecionada = null;
+    desenhaMes();
+    desenhaHorarios();
+  }
+}
+
+if (calendario) {
+  calendario.querySelector(".prev").addEventListener("click", () => {
+    mesNaTela.setMonth(mesNaTela.getMonth() - 1);
+    desenhaMes();
+  });
+
+  calendario.querySelector(".next").addEventListener("click", () => {
+    mesNaTela.setMonth(mesNaTela.getMonth() + 1);
+    desenhaMes();
+  });
+
+  reiniciaCalendario();
+}
+
+// 7. FORMULÁRIO DE AGENDAMENTO
+// A validação básica é do próprio HTML (required e pattern).
+// O JavaScript completa com uma regex para o nome, formata o
+// telefone e, no envio, monta a mensagem para o WhatsApp.
+const formulario = document.querySelector('form[data-form="agendar"]');
+
+// Nome: só letras (com acento) e espaços
+const REGEX_NOME = /^[A-Za-zÀ-ÿ\s]+$/;
+
+// Formata o telefone enquanto a pessoa digita:
+// celular (11 dígitos) → (21) 90000-0000 · fixo (10 dígitos) → (21) 3333-4444
+function formataTelefone(evento) {
+  const campo = evento.target;
+  const digitos = campo.value.replace(/\D/g, "").slice(0, 11); // \D = tudo que não é dígito
+
+  // o hífen fica depois do 5º número no celular e depois do 4º no fixo
+  const corte = digitos.length === 11 ? 7 : 6;
+
+  let formatado = digitos;
+  if (digitos.length > 2) {
+    formatado = `(${digitos.slice(0, 2)}) ${digitos.slice(2)}`;
+  }
+  if (digitos.length > corte) {
+    formatado = `(${digitos.slice(0, 2)}) ${digitos.slice(2, corte)}-${digitos.slice(corte)}`;
+  }
+  campo.value = formatado;
+}
+
+// Mostra (ou apaga) a mensagem de erro do formulário
+function mostraErro(texto) {
+  formulario.querySelector(".erro").textContent = texto;
+}
+
+if (formulario) {
+  const pagina = formulario.closest(".schedule");
+  const confirmacao = document.getElementById("agendar-ok");
+
+  formulario.querySelectorAll('input[type="tel"]').forEach((campo) => {
+    campo.addEventListener("input", formataTelefone);
+  });
+
+  // apaga a mensagem de erro quando a pessoa volta a digitar
+  formulario.addEventListener("input", () => mostraErro(""));
+
+  // O evento submit só dispara depois que o navegador validou os campos
+  formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault(); // não recarrega a página
+
+    // FormData lê todos os campos pelo atributo name e vira um objeto
+    const dados = Object.fromEntries(new FormData(formulario));
+
+    // regras extras com regex
+    if (!REGEX_NOME.test(dados.nome)) {
+      mostraErro("O nome deve ter só letras e espaços.");
+      formulario.querySelector("#ag-nome").focus();
+      return;
+    }
+    if (dados.atleta !== undefined && !REGEX_NOME.test(dados.atleta)) {
+      mostraErro("O nome do atleta deve ter só letras e espaços.");
+      formulario.querySelector("#ag-atleta").focus();
+      return;
+    }
+
+    const servico = formulario.getAttribute("data-service");
+    const dataTexto =
+      `${DIAS_DA_SEMANA[dataSelecionada.getDay()]}, ${dataSelecionada.getDate()} de ${MESES[dataSelecionada.getMonth()]}`.toLowerCase();
+    const doAtleta = dados.atleta ? ` do(a) atleta ${dados.atleta.trim()}` : "";
+    const mensagem = `Olá! Sou ${dados.nome.trim()} e gostaria de agendar ${servico}${doAtleta} no ${marca} para ${dataTexto}, às ${dados.horario}.`;
+
+    confirmacao.querySelector("[data-summary]").textContent =
+      `${marca} · ${dataTexto} · ${dados.horario}`;
+    confirmacao.querySelector("[data-whatsapp-confirm]").href =
+      criaLinkWhatsapp(mensagem);
+    pagina.classList.add("sent");
+  });
+
+  // "Fazer outro agendamento": limpa o formulário e mostra de novo
+  confirmacao
+    .querySelector("[data-reset-form]")
+    .addEventListener("click", () => {
+      pagina.classList.remove("sent");
+      formulario.reset();
+      mostraErro("");
+      reiniciaCalendario();
+      formulario.querySelector("input").focus();
+    });
+}
