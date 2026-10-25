@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One to One Studio · Playmakerz</title>
+    <meta
+      name="description"
+      content="Treinamento individualizado para todas as idades, de 17 a 90 anos. Musculação e personal training com até 3 alunos por professor."
+    />
+    <link rel="icon" href="assets/img/rocket.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- defer: o script só roda depois que o HTML terminou de ser lido -->
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Cabeçalho: logo do One to One Studio + menu de navegação -->
+    <header class="site-header">
+      <div class="container nav">
+        <a
+          class="nav-logo"
+          href="index.html"
+          aria-label="One to One Studio — página inicial"
+        >
+          <span class="brand-logo-1to1 nav-1to1" aria-hidden="true">
+            <span class="word">ONE <span class="to">to</span> ONE</span>
+            <span class="studio">STUDIO</span>
+          </span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Menu principal">
+          <ul class="nav-links" id="nav-links">
+            <li>
+              <a href="one-to-one.html" class="active" aria-current="page"
+                >1to1</a
+              >
+            </li>
+            <li><a href="pkz.html">PKZ</a></li>
+            <li><a href="planos.html">Planos</a></li>
+            <li class="has-dropdown">
+              <button
+                type="button"
+                class="dropdown-toggle"
+                aria-expanded="false"
+              >
+                Agendar <span class="chev"></span>
+              </button>
+              <ul class="dropdown">
+                <li><a href="agendar-one-to-one.html">One-to-One</a></li>
+                <li><a href="agendar-pkz.html">PKZ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <h1>Seu corpo, <br /><span class="hl">seu treino</span>.</h1>
+            <p class="hero-lead-wide">
+              Treinamento individualizado para potencializar o que torna você
+              único. Musculação e personal training para todas as idades, de 17
+              a 90 anos, com qualquer objetivo. Peso livre, aparelhos e
+              configuração individual — tudo desenhado para o seu corpo e a sua
+              rotina.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="agendar-one-to-one.html"
+                >Agendar aula experimental <span class="chev"></span
+              ></a>
+            </div>
+          </div>
+          <img
+            class="hero-photo"
+            src="assets/img/hero-one-to-one.jpg"
+            alt="Aluno treinando com halteres sob a orientação de uma personal trainer"
+            width="900"
+            height="1348"
+          />
+        </div>
+      </section>
+
+      <!-- A metodologia -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">A metodologia</p>
+            <h2 class="section-title" style="max-width: 620px">
+              Convencional no formato, cirúrgico no cuidado.
+            </h2>
+          </div>
+          <div class="features">
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Treino individualizado</h3>
+                <p>
+                  Cada aluno tem configuração de aparelhos e carga pensada para
+                  o seu corpo e objetivo.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Valências por grupo muscular</h3>
+                <p>
+                  Trabalhamos força, mobilidade e resistência de forma
+                  direcionada — do dorsal ao core.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Até 3 alunos por professor</h3>
+                <p>
+                  Atenção real em cada sessão. Você nunca é só mais um número na
+                  sala.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Relatório a cada sessão</h3>
+                <p>
+                  Você acompanha o que foi treinado, a intensidade e a conduta
+                  sugerida para a próxima aula.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Professores: cada foto com legenda (figure + figcaption) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Nossos professores</p>
+            <h2 class="section-title">Quem vai treinar com você</h2>
+          </div>
+          <div class="grid-3">
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-eduardo.jpg"
+                  alt="Eduardo Martins"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Eduardo Martins</h3>
+                <span class="role">Treinador · Musculação</span>
+                <span class="exp">12 anos de experiência</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-carla.jpg"
+                  alt="Carla Menezes"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Carla Menezes</h3>
+                <span class="role">Personal · Reabilitação</span>
+                <span class="exp">9 anos de experiência</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-rafael.jpg"
+                  alt="Rafael Souza"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Rafael Souza</h3>
+                <span class="role">Força &amp; Condicionamento</span>
+                <span class="exp">7 anos de experiência</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Depoimentos -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Depoimentos</p>
+            <h2 class="section-title">Quem treina, recomenda</h2>
+          </div>
+          <div class="grid-3">
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Voltei a treinar aos 58 anos com medo de me machucar. Aqui
+                montaram tudo no meu ritmo e hoje faço coisas que não
+                imaginava.”
+              </p>
+              <p class="quote-author">
+                <strong>Marta R.</strong><span>Aluna há 2 anos</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “A autonomia para marcar e remarcar sozinho pelo app mudou a
+                minha rotina. Nunca mais fiquei sem graça de pedir no WhatsApp.”
+              </p>
+              <p class="quote-author">
+                <strong>Bruno L.</strong><span>Aluno há 1 ano</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Cada professor sabe exatamente o que treinei na última aula.
+                Sinto que existe um plano de verdade por trás de tudo.”
+              </p>
+              <p class="quote-author">
+                <strong>Patrícia G.</strong><span>Aluna há 3 anos</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Perguntas frequentes: lista descritiva (pergunta em dt, resposta em dd) -->
+      <section class="section">
+        <div class="container">
+          <div class="faq">
+            <p class="eyebrow">Perguntas frequentes</p>
+            <h2 class="section-title">Tire suas dúvidas</h2>
+            <dl class="faq-list">
+              <div class="faq-item open">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="true">
+                    Como funciona o treinamento de vocês?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Combinamos as suas valências físicas com o seu objetivo e a
+                    nossa metodologia central. O treino é individualizado, com
+                    aparelhos e cargas ajustadas para você — e cada sessão gera
+                    um relatório de acompanhamento.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Quais são os horários de funcionamento?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Atendemos de segunda a sexta, das 7h às 20h, e aos sábados
+                    pela manhã. Veja os horários livres e
+                    <a class="hl" href="agendar-one-to-one.html"
+                      >agende sua aula experimental</a
+                    >.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Quais são os valores e como funciona o pagamento?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Cada pacote é montado sob medida, de acordo com a frequência
+                    semanal e os serviços incluídos. Veja os
+                    <a class="hl" href="planos.html">planos</a> e fale com a
+                    gente para montar o seu.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Vocês atendem qualquer esporte ou objetivo?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Sim. A metodologia é a mesma e se adapta ao seu objetivo —
+                    saúde, estética, reabilitação ou performance em qualquer
+                    modalidade.
+                  </p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chamada final para agendamento -->
+      <section class="cta">
+        <img
+          class="deco-chevrons"
+          src="assets/img/chevrons.svg"
+          alt=""
+          width="140"
+          height="70"
+          style="left: 24px; top: 24px"
+        />
+        <div class="container reveal">
+          <h2>Venha treinar com a gente.</h2>
+          <p>
+            Agende uma aula experimental, conheça o studio e a equipe, e monte
+            com a gente o plano ideal para o seu objetivo.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="agendar-one-to-one.html"
+              >Agendar aula experimental</a
+            >
+            <a class="btn btn-ghost" href="planos.html">Conhecer os planos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé: contato, links e copyright -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img
+              class="logo"
+              src="assets/img/logo-playmakerz.png"
+              alt="Playmakerz"
+              width="140"
+              height="32"
+              loading="lazy"
+            />
+            <p>
+              Uma empresa, duas formas de aplicar a mesma metodologia.
+              Transformamos potencial em performance — para cada idade e cada
+              esporte.
+            </p>
+            <address class="addr">Barra da Tijuca · Rio de Janeiro</address>
+          </div>
+          <nav aria-labelledby="rodape-marcas">
+            <h2 id="rodape-marcas">Marcas</h2>
+            <ul>
+              <li><a href="one-to-one.html">One-to-One Studio</a></li>
+              <li><a href="pkz.html">PKZ · Playmakerz</a></li>
+              <li><a href="planos.html">Planos</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-acesso">
+            <h2 id="rodape-acesso">Acesso</h2>
+            <ul>
+              <li>
+                <a href="agendar-one-to-one.html">Agendar · One-to-One</a>
+              </li>
+              <li><a href="agendar-pkz.html">Agendar · PKZ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <time datetime="2026">2026</time> PKZ One-to-One. Todos os
+            direitos reservados.
+          </p>
+          <p class="tag">Do potencial à performance</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
