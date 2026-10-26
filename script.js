@@ -226,22 +226,53 @@ ultimoDia.setDate(ultimoDia.getDate() + 60);
 let mesNaTela = new Date(hoje.getFullYear(), hoje.getMonth(), 1);
 let dataSelecionada = null;
 
-// Devolve os horários livres de um dia (array de strings)
+// Lista das reservas, salva no navegador (localStorage) e compartilhada
+// pelas duas páginas. Cada reserva é um objeto com a marca, o horário e
+// os dados de contato:
+// { marca: "PKZ", data: "2026-10-27", horario: "14:00", nome: "Ana Souza",
+//   email: "ana@email.com", whatsapp: "(21) 99999-9999", atleta: "Leo Souza" }
+function carregaReservas() {
+  try {
+    return JSON.parse(localStorage.getItem("reservas")) || [];
+  } catch {
+    return []; // texto inválido salvo ou navegador sem localStorage
+  }
+}
+
+let reservas = carregaReservas();
+
+// Diz se um horário desta marca já está na lista de reservas (true ou false)
+function estaReservado(data, horario) {
+  const dia = formataData(data);
+  return reservas.some(
+    (reserva) =>
+      reserva.marca === marca &&
+      reserva.data === dia &&
+      reserva.horario === horario,
+  );
+}
+
+// Devolve os horários livres de um dia (array de strings):
+// tira os que já foram reservados e os que já passaram
 function horariosDoDia(data) {
   const diaDaSemana = data.getDay();
   if (diaDaSemana === 0) return []; // domingo
 
   const lista =
     diaDaSemana === 6 ? HORARIOS[marca].sabado : HORARIOS[marca].semana;
+  const agora = new Date();
 
-  // Simula alguns horários já ocupados, sempre iguais para a mesma data
-  const semente = data.getDate() * 7 + data.getMonth() * 3 + marca.length;
-  return lista.filter((horario, i) => (semente + i * 5) % 4 !== 0);
+  return lista.filter((horario) => {
+    // data e hora de INÍCIO deste horário, para saber se já passou
+    const inicio = new Date(data);
+    inicio.setHours(Number(horario.slice(0, 2)), Number(horario.slice(3, 5)));
+    return inicio > agora && !estaReservado(data, horario);
+  });
 }
 
-// O dia aceita agendamento? (a partir de amanhã, até o último dia, e com horário livre)
+// O dia aceita agendamento? (de hoje até o último dia, e com horário livre)
 function diaDisponivel(data) {
-  return data > hoje && data <= ultimoDia && horariosDoDia(data).length > 0;
+  return data >= hoje && data <= ultimoDia && horariosDoDia(data).length > 0;
 }
 
 function primeiroDiaDisponivel() {
@@ -409,7 +440,8 @@ if (calendario) {
 // 7. FORMULÁRIO DE AGENDAMENTO
 // A validação básica é do próprio HTML (required e pattern).
 // O JavaScript completa com uma regex para o nome, formata o
-// telefone e, no envio, monta a mensagem para o WhatsApp.
+// telefone e, no envio, salva a reserva no navegador e monta a
+// mensagem para o WhatsApp.
 const formulario = document.querySelector('form[data-form="agendar"]');
 
 // Nome: só letras (com acento) e espaços
@@ -442,6 +474,8 @@ function mostraErro(texto) {
 if (formulario) {
   const pagina = formulario.closest(".schedule");
   const confirmacao = document.getElementById("agendar-ok");
+  const botaoDados = confirmacao.querySelector("[data-ver-dados]");
+  const caixaDados = confirmacao.querySelector("[data-dados]");
 
   formulario.querySelectorAll('input[type="tel"]').forEach((campo) => {
     campo.addEventListener("input", formataTelefone);
@@ -469,6 +503,22 @@ if (formulario) {
       return;
     }
 
+    // Cria o objeto da reserva, coloca na lista e salva no navegador.
+    // Depois disso o horário passa a aparecer como ocupado.
+    const reserva = {
+      marca: marca,
+      data: dados.data,
+      horario: dados.horario,
+      nome: dados.nome.trim(),
+      email: dados.email,
+      whatsapp: dados.whatsapp,
+    };
+    if (dados.atleta) reserva.atleta = dados.atleta.trim();
+    reservas.push(reserva);
+    localStorage.setItem("reservas", JSON.stringify(reservas));
+    // JSON.stringify com o 2 deixa o texto indentado e legível
+    caixaDados.textContent = JSON.stringify(reservas, null, 2);
+
     const servico = formulario.getAttribute("data-service");
     const dataTexto =
       `${DIAS_DA_SEMANA[dataSelecionada.getDay()]}, ${dataSelecionada.getDate()} de ${MESES[dataSelecionada.getMonth()]}`.toLowerCase();
@@ -491,5 +541,22 @@ if (formulario) {
       mostraErro("");
       reiniciaCalendario();
       formulario.querySelector("input").focus();
+    });
+
+  // Ferramentas de teste: mostra ou esconde a caixa com os dados salvos
+  botaoDados.addEventListener("click", () => {
+    caixaDados.hidden = !caixaDados.hidden;
+    botaoDados.textContent = caixaDados.hidden
+      ? "Ver dados salvos"
+      : "Esconder dados salvos";
+  });
+
+  // ...e apaga todas as reservas, liberando os horários de novo
+  confirmacao
+    .querySelector("[data-limpar-reservas]")
+    .addEventListener("click", () => {
+      localStorage.removeItem("reservas");
+      reservas = [];
+      caixaDados.textContent = "[]";
     });
 }

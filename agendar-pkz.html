@@ -154,6 +154,17 @@
                   required
                 />
               </div>
+              <div class="field">
+                <label for="ag-email">E-mail</label>
+                <input
+                  id="ag-email"
+                  name="email"
+                  type="email"
+                  placeholder="voce@email.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
               <!-- mensagem de erro preenchida pelo JavaScript -->
               <p class="erro" aria-live="polite"></p>
             </fieldset>
@@ -223,10 +234,10 @@
               width="64"
               height="64"
             />
-            <h2>Solicitação enviada!</h2>
+            <h2>Horário reservado!</h2>
             <p>
-              <span data-summary></span><br />Nossa equipe vai confirmar o
-              horário pelo WhatsApp.
+              <span data-summary></span><br />O horário ficou reservado para o
+              seu atleta. Se quiser, confirme também com a equipe pelo WhatsApp.
             </p>
             <a
               class="btn btn-whatsapp"
@@ -251,6 +262,32 @@
                 Fazer outro agendamento
               </button>
             </p>
+            <!-- Ferramentas de teste: mostram e apagam as reservas salvas no navegador -->
+            <p style="margin: 8px 0 0">
+              <button type="button" class="link-arrow" data-ver-dados>
+                Ver dados salvos
+              </button>
+              <button type="button" class="link-arrow" data-limpar-reservas>
+                Limpar reservas
+              </button>
+            </p>
+            <pre
+              data-dados
+              hidden
+              style="
+                max-height: 260px;
+                margin: 16px 0 0;
+                padding: 14px;
+                overflow: auto;
+                background-color: #050d14;
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                font-size: 0.8125rem;
+                color: var(--text);
+                text-align: left;
+                white-space: pre-wrap;
+              "
+            ></pre>
           </div>
         </form>
       </section>
