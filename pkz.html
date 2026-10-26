@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKZ Lab · Playmakerz</title>
+    <meta
+      name="description"
+      content="Alto rendimento para atletas de 7 a 15 anos, dentro do esporte que escolheram praticar. Treino funcional, integrado e medido de perto."
+    />
+    <link rel="icon" href="assets/img/rocket.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- defer: o script só roda depois que o HTML terminou de ser lido -->
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body class="pkz-rockets">
+    <!-- Cabeçalho: logo do PKZ Lab + menu de navegação -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="nav-logo" href="index.html">
+          <img
+            class="nav-pkzlab"
+            src="assets/img/logo-pkz-lab.png"
+            alt="PKZ Lab — página inicial"
+            width="133"
+            height="40"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Menu principal">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="one-to-one.html">1to1</a></li>
+            <li>
+              <a href="pkz.html" class="active" aria-current="page">PKZ</a>
+            </li>
+            <li><a href="planos.html">Planos</a></li>
+            <li class="has-dropdown">
+              <button
+                type="button"
+                class="dropdown-toggle"
+                aria-expanded="false"
+              >
+                Agendar <span class="chev"></span>
+              </button>
+              <ul class="dropdown">
+                <li><a href="agendar-one-to-one.html">One-to-One</a></li>
+                <li><a href="agendar-pkz.html">PKZ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <h1>
+              Jovens atletas, <br /><span class="hl">alta performance</span>.
+            </h1>
+            <p class="hero-lead-wide">
+              Alto rendimento que transforma jovens atletas em versões mais
+              fortes, rápidas e completas de si mesmos. Metodologia própria para
+              atletas de 7 a 15 anos, dentro do esporte que eles escolheram
+              praticar. Treino funcional, integrado e medido de perto.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-accent" href="agendar-pkz.html"
+                >Agendar avaliação <span class="chev"></span
+              ></a>
+            </div>
+          </div>
+          <img
+            class="hero-photo"
+            src="assets/img/hero-pkz.jpg"
+            alt="Menino fazendo treino de agilidade entre cones em um campo"
+            width="900"
+            height="1463"
+          />
+        </div>
+      </section>
+
+      <!-- O sistema complexo -->
+      <section class="section">
+        <div class="container grid-2">
+          <div class="photo-mosaic reveal">
+            <img
+              src="assets/img/pkz-1.jpg"
+              alt="Crianças disputando a bola em campo de futebol"
+              loading="lazy"
+            />
+            <img
+              src="assets/img/pkz-2.jpg"
+              alt="Menino chutando a bola"
+              loading="lazy"
+            />
+            <img
+              src="assets/img/pkz-3.jpg"
+              alt="Jogo de futebol infantil"
+              loading="lazy"
+            />
+            <img
+              src="assets/img/pkz-4.jpg"
+              alt="Goleiro mirim correndo"
+              loading="lazy"
+            />
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">O sistema complexo</p>
+            <h2 class="section-title" style="margin-bottom: 24px">
+              Em vez de isolar músculos, treinamos a
+              <span class="hl">exigência real</span> do esporte.
+            </h2>
+            <p style="color: var(--muted)">
+              Mapeamos as complexidades específicas de cada modalidade e
+              treinamos o atleta dentro delas — de forma funcional e integrada,
+              replicando a demanda real da competição.
+            </p>
+            <!-- Conteúdo auxiliar: um exemplo que complementa o texto -->
+            <aside class="callout">
+              <h3>Exemplo · piloto de kart</h3>
+              <p>
+                No treino convencional, ele faria uma puxada isolada para o
+                dorsal. No PKZ, ele treina sentado, executando um movimento
+                complexo enquanto estabiliza cabeça e pescoço para sustentar o
+                tronco — exatamente como na pista.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- O processo do atleta (lista ordenada de etapas) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">O processo do atleta</p>
+            <h2 class="section-title" style="max-width: 640px">
+              Da primeira avaliação ao gráfico de evolução.
+            </h2>
+          </div>
+          <ol class="grid-4 steps">
+            <li class="card reveal">
+              <span class="step-num"
+                >01
+                <img class="rocket" src="assets/img/rocket.svg" alt="" />
+              </span>
+              <h3>Avaliação</h3>
+              <p>
+                16 testes físicos — salto, velocidade, agilidade, velocidade de
+                reação, foco e mais.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num"
+                >02
+                <img class="rocket" src="assets/img/rocket.svg" alt="" />
+              </span>
+              <h3>Cronograma</h3>
+              <p>
+                Um mesociclo do mês, dividido em microciclos semanais, sob
+                medida para o atleta.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num"
+                >03
+                <img class="rocket" src="assets/img/rocket.svg" alt="" />
+              </span>
+              <h3>Treino + relatório</h3>
+              <p>
+                Cada sessão gera um relatório com observações relevantes para a
+                próxima.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num"
+                >04
+                <img class="rocket" src="assets/img/rocket.svg" alt="" />
+              </span>
+              <h3>Reavaliação mensal</h3>
+              <p>
+                Medimos a evolução e ajustamos o plano — sempre com contexto,
+                nunca só o número.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Serviços do pacote -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Além do treino</p>
+            <h2 class="section-title">
+              Um pacote que cuida do atleta por inteiro
+            </h2>
+          </div>
+          <div class="grid-4">
+            <article class="card reveal">
+              <span class="pkz-mark-sm" aria-hidden="true"
+                >P<img src="assets/img/rocket-white.svg" alt="" />Z</span
+              >
+              <h3>Fisioterapia</h3>
+              <p>Prevenção e recuperação integradas ao plano de treino.</p>
+            </article>
+            <article class="card reveal">
+              <span class="pkz-mark-sm" aria-hidden="true"
+                >P<img src="assets/img/rocket-white.svg" alt="" />Z</span
+              >
+              <h3>Nutrição</h3>
+              <p>
+                Acompanhamento alimentar para sustentar a performance em
+                crescimento.
+              </p>
+            </article>
+            <article class="card reveal">
+              <span class="pkz-mark-sm" aria-hidden="true"
+                >P<img src="assets/img/rocket-white.svg" alt="" />Z</span
+              >
+              <h3>Psicologia</h3>
+              <p>Preparo mental e foco — item opcional dentro do pacote.</p>
+            </article>
+            <article class="card reveal">
+              <span class="pkz-mark-sm" aria-hidden="true"
+                >P<img src="assets/img/rocket-white.svg" alt="" />Z</span
+              >
+              <h3>Análise &amp; scout</h3>
+              <p>
+                Análise de desempenho esportivo a partir dos jogos do atleta.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Especialistas: cada foto com legenda (figure + figcaption) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Especialistas</p>
+            <h2 class="section-title">Quem conduz os atletas</h2>
+          </div>
+          <div class="grid-3">
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-henrique.jpg"
+                  alt="Henrique Alves"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Henrique Alves</h3>
+                <span class="role">Metodologia · Fundador</span>
+                <span class="exp">15 anos com atletas</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-rafael.jpg"
+                  alt="Pedro Nunes"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Pedro Nunes</h3>
+                <span class="role">Coordenação técnica</span>
+                <span class="exp">10 anos de experiência</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="assets/img/prof-eduardo.jpg"
+                  alt="Dudu Ferreira"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Dudu Ferreira</h3>
+                <span class="role">Treinador de atletas</span>
+                <span class="exp">8 anos de experiência</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Depoimentos de pais -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Depoimentos de pais</p>
+            <h2 class="section-title">Quem confia nos filhos com a gente</h2>
+          </div>
+          <div class="grid-3">
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Meu filho evoluiu de um jeito que a gente consegue enxergar nos
+                gráficos. E sempre vem uma explicação junto, não só números
+                soltos.”
+              </p>
+              <p class="quote-author">
+                <strong>Adriana M.</strong><span>Mãe de atleta · futebol</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Na reavaliação o salto “caiu”, mas explicaram que ele corrigiu
+                uma assimetria grave. Fiquei muito mais tranquilo entendendo o
+                contexto.”
+              </p>
+              <p class="quote-author">
+                <strong>Cláudio T.</strong><span>Pai de atleta · vôlei</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “O acompanhamento é sério. Cada professor sabe o que foi
+                treinado no dia anterior e respeita o que o corpo dele pediu.”
+              </p>
+              <p class="quote-author">
+                <strong>Renata F.</strong><span>Mãe de atleta · natação</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Perguntas frequentes: lista descritiva (pergunta em dt, resposta em dd) -->
+      <section class="section">
+        <div class="container">
+          <div class="faq">
+            <p class="eyebrow">Perguntas frequentes</p>
+            <h2 class="section-title">Dúvidas de pais</h2>
+            <dl class="faq-list">
+              <div class="faq-item open">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="true">
+                    Como funciona a metodologia do PKZ?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Treinamos o atleta dentro das exigências reais do esporte
+                    dele (o "sistema complexo"), começando por uma avaliação de
+                    16 testes físicos e montando um cronograma mensal com
+                    reavaliações periódicas.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Por que um gráfico pode “cair” e ainda ser evolução?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Porque o número sozinho não conta a história. Às vezes um
+                    resultado diminui enquanto o atleta corrige uma assimetria
+                    ou melhora a técnica — e isso é evolução. Por isso todo
+                    resultado vem com o contexto explicado pelo professor.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Quais são os horários? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    As turmas do PKZ acontecem no contraturno escolar, de
+                    segunda a sexta à tarde, e aos sábados pela manhã. Veja os
+                    horários livres e
+                    <a class="hl" href="agendar-pkz.html">agende uma avaliação</a>
+                    para o seu atleta.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Vocês atendem qualquer esporte? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Sim. Mapeamos as exigências de cada modalidade — futebol,
+                    vôlei, natação, kart, lutas e muitas outras — e treinamos o
+                    atleta dentro delas.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Quais são os valores? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    O pacote é montado sob medida conforme a frequência e os
+                    serviços escolhidos. Conheça os
+                    <a class="hl" href="planos.html">planos</a> e fale com a
+                    gente para montar o ideal para o seu atleta.
+                  </p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chamada final para agendamento -->
+      <section class="cta">
+        <div class="container reveal">
+          <img
+            class="rocket-big"
+            src="assets/img/rocket.svg"
+            alt=""
+            width="34"
+            height="42"
+          />
+          <h2>Faça o seu atleta decolar.</h2>
+          <p>
+            Agende uma avaliação, conheça o espaço e a metodologia, e monte com
+            a gente o pacote ideal para o seu atleta.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="agendar-pkz.html"
+              >Agendar avaliação</a
+            >
+            <a class="btn btn-ghost" href="planos.html">Conhecer os planos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé: contato, links e copyright -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img
+              class="logo"
+              src="assets/img/logo-playmakerz.png"
+              alt="Playmakerz"
+              width="140"
+              height="32"
+              loading="lazy"
+            />
+            <p>
+              Uma empresa, duas formas de aplicar a mesma metodologia.
+              Transformamos potencial em performance — para cada idade e cada
+              esporte.
+            </p>
+            <address class="addr">Barra da Tijuca · Rio de Janeiro</address>
+          </div>
+          <nav aria-labelledby="rodape-marcas">
+            <h2 id="rodape-marcas">Marcas</h2>
+            <ul>
+              <li><a href="one-to-one.html">One-to-One Studio</a></li>
+              <li><a href="pkz.html">PKZ · Playmakerz</a></li>
+              <li><a href="planos.html">Planos</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-acesso">
+            <h2 id="rodape-acesso">Acesso</h2>
+            <ul>
+              <li>
+                <a href="agendar-one-to-one.html">Agendar · One-to-One</a>
+              </li>
+              <li><a href="agendar-pkz.html">Agendar · PKZ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <time datetime="2026">2026</time> PKZ One-to-One. Todos os
+            direitos reservados.
+          </p>
+          <p class="tag">Do potencial à performance</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
