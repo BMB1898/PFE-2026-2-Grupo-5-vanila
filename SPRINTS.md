@@ -4,9 +4,9 @@ Site da **Playmakerz** (One to One Studio + PKZ Lab), feito em HTML, CSS e JavaS
 
 ## Time
 
-|---|---|
-| Scrum Master | _Bernardo Borghetti_ |
-| Desenvolvimento | Bernardo Borghetti, Bernardo Parrilha, Giovanni Chianello, João Enes, Rafael Castro, Giulia Merino |
+Scrum Master: _Bernardo Borghetti_ 
+
+Desenvolvimento: Bernardo Borghetti, Bernardo Parrilha, Giovanni Chianello, João Enes, Rafael Castro, Giulia Merino |
 
 ## Backlog
 
