@@ -116,7 +116,7 @@ h3 {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.05;
+  line-height: 1.15; /* espaço para os acentos das maiúsculas (À, Ã, É) */
   letter-spacing: 0.005em;
 }
 
@@ -484,7 +484,7 @@ button:focus-visible {
 .hero h1 {
   margin-bottom: 26px;
   font-size: clamp(2.75rem, 6vw, 5.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
 }
 .hero p {
   max-width: 560px;
@@ -955,7 +955,7 @@ button:focus-visible {
 .page-head h1 {
   margin-bottom: 24px;
   font-size: clamp(2.75rem, 6vw, 4.5rem);
-  line-height: 0.95;
+  line-height: 1.1;
 }
 .page-head p {
   margin-bottom: 40px;
