@@ -33,11 +33,11 @@ Desenvolvimento: Bernardo Borghetti, Bernardo Parrilha, Giovanni Chianello, Joã
 | Quem | O que fez |
 |---|---|
 | João Enes | Home (`index.html`) e planos (`planos.html`) |
-| Giovanni | Páginas de agendamento One to One e PKZ |
+| Giovanni Chianello | Páginas de agendamento One to One e PKZ |
 | Bernardo Borghetti | `script.js`: menu, animações, FAQ, calendário e formulário |
 | Bernardo Parrilha | Página One to One |
 | Rafael Castro | Página PKZ Lab |
-| SkyeMel | Fotos, `style.css`, integração das páginas e reservas salvas no navegador |
+| Giulia Merino | Fotos, `style.css`, integração das páginas e reservas salvas no navegador |
 
 **Retrospectiva**
 
