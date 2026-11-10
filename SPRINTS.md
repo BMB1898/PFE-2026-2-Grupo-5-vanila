@@ -15,6 +15,7 @@ Desenvolvimento: Bernardo Borghetti, Bernardo Parrilha, Giovanni Chianello, Joã
 | Página inicial | Must | ✅ |
 | Páginas das marcas (One to One e PKZ) | Must | ✅ |
 | Página de planos com link para WhatsApp | Must | ✅ |
+| Página de fisioterapia (com link no menu) | Should | ✅ |
 | Agendamento com calendário (One to One e PKZ) | Must | ✅ |
 | Site responsivo (menu de celular) | Must | ✅ |
 | Reservas chegarem à equipe (hoje ficam só no navegador) | Could | ⬜ |

@@ -15,6 +15,7 @@ O site apresenta as marcas e os planos e permite agendar uma aula experimental o
 | `planos.html` | Planos e pacotes |
 | `one-to-one.html` | One to One Studio |
 | `pkz.html` | PKZ Lab |
+| `fisioterapia.html` | Fisioterapia |
 | `agendar-one-to-one.html` | Agendar aula experimental |
 | `agendar-pkz.html` | Agendar avaliação |
 

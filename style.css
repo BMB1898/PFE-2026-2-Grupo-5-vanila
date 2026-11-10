@@ -514,6 +514,7 @@ button:focus-visible {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 30%; /* ao cortar a foto, prioriza a parte de cima (rostos) */
+  background-color: var(--surface); /* aparece enquanto a foto carrega (ou se faltar) */
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
@@ -624,12 +625,9 @@ button:focus-visible {
   width: 100%;
   aspect-ratio: 5 / 7;
   object-fit: cover;
+  background-color: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-}
-.photo-mosaic img:nth-child(even) {
-  aspect-ratio: 5 / 6.4;
-  align-self: end;
 }
 
 /* Cards das duas marcas (Home) */

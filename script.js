@@ -12,7 +12,8 @@
 // Número de WhatsApp da empresa (formato internacional, só dígitos).
 // Se mudar o número, troque também nos links wa.me do HTML
 // (botões "Fale com a gente" de planos.html e "Confirmar pelo WhatsApp"
-// das páginas de agendamento).
+// das páginas de agendamento). Os botões de fisioterapia.html usam
+// data-whatsapp e já pegam o número daqui.
 const WHATSAPP_NUMBER = "5521972657266";
 
 // Monta o link do WhatsApp com uma mensagem já escrita.
@@ -20,6 +21,12 @@ const WHATSAPP_NUMBER = "5521972657266";
 function criaLinkWhatsapp(mensagem) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
 }
+
+// Links de WhatsApp pela página: todo elemento com data-whatsapp="mensagem"
+// ganha o href montado com o número acima (ex.: botões de fisioterapia.html).
+document.querySelectorAll("[data-whatsapp]").forEach((link) => {
+  link.href = criaLinkWhatsapp(link.getAttribute("data-whatsapp"));
+});
 
 // 1. HEADER QUE MUDA AO ROLAR A PÁGINA
 // Quando a página desce mais de 10px, o header ganha a classe

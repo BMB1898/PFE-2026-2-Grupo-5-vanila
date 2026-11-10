@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fisioterapia · Playmakerz</title>
+    <meta
+      name="description"
+      content="Fisioterapia esportiva e de reabilitação integrada ao treino: avaliação, prevenção de lesões e recuperação para atletas e alunos da Playmakerz."
+    />
+    <link rel="icon" href="fotos/img/rocket.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- defer: o script só roda depois que o HTML terminou de ser lido -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Cabeçalho: logo da Playmakerz + menu de navegação -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="nav-logo" href="index.html">
+          <img
+            src="fotos/img/logo-playmakerz.png"
+            alt="Playmakerz — página inicial"
+            width="140"
+            height="32"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav aria-label="Menu principal">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="one-to-one.html">One to One</a></li>
+            <li><a href="pkz.html">PKZ</a></li>
+            <li>
+              <a href="fisioterapia.html" class="active" aria-current="page"
+                >Fisioterapia</a
+              >
+            </li>
+            <li><a href="planos.html">Planos</a></li>
+            <li class="has-dropdown">
+              <button
+                type="button"
+                class="dropdown-toggle"
+                aria-expanded="false"
+              >
+                Agendar <span class="chev"></span>
+              </button>
+              <ul class="dropdown">
+                <li><a href="agendar-one-to-one.html">One-to-One</a></li>
+                <li><a href="agendar-pkz.html">PKZ</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <h1>Movimento sem dor, <br /><span class="hl">com performance</span>.</h1>
+            <p class="hero-lead-wide">
+              Fisioterapia esportiva e de reabilitação integrada ao treino.
+              Avaliamos, tratamos e prevenimos lesões para que você e o seu
+              atleta voltem a se mover com segurança e confiança.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-accent"
+                href="https://wa.me/5521972657266" data-whatsapp="Olá! Quero agendar uma avaliação de fisioterapia."
+                >Agendar avaliação <span class="chev"></span
+              ></a>
+            </div>
+          </div>
+          <img
+            class="hero-photo"
+            src="fotos/img/hero-fisioterapia.jpg"
+            alt="Fisioterapeuta fazendo massagem de recuperação na perna de um atleta"
+            width="900"
+            height="1200"
+          />
+        </div>
+      </section>
+
+      <!-- Áreas de atuação -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Áreas de atuação</p>
+            <h2 class="section-title" style="max-width: 620px">
+              Do primeiro desconforto ao retorno ao esporte.
+            </h2>
+          </div>
+          <div class="features">
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Fisioterapia esportiva</h3>
+                <p>
+                  Tratamento de lesões musculares, articulares e ligamentares
+                  com foco no retorno seguro à modalidade.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Reabilitação pós-cirúrgica</h3>
+                <p>
+                  Protocolos progressivos para recuperar força, mobilidade e
+                  confiança depois de uma cirurgia.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Prevenção de lesões</h3>
+                <p>
+                  Avaliação de movimento e correção de assimetrias antes que
+                  elas virem problema.
+                </p>
+              </div>
+            </article>
+            <article class="card feature reveal">
+              <span class="chev"></span>
+              <div>
+                <h3>Dor e postura</h3>
+                <p>
+                  Alívio de dores recorrentes e reeducação postural para o dia a
+                  dia e para o treino.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Integrada ao treino -->
+      <section class="section">
+        <div class="container grid-2">
+          <div class="photo-mosaic reveal">
+            <img
+              src="fotos/img/fisio-1.jpg"
+              alt="Atendimento no campo: spray para tratar o tornozelo de um jogador de futebol"
+              loading="lazy"
+            />
+            <img
+              src="fotos/img/fisio-2.jpg"
+              alt="Atleta usando rolo de liberação miofascial na pista"
+              loading="lazy"
+            />
+            <img
+              src="fotos/img/fisio-3.jpg"
+              alt="Jogador de futebol com joelheira de compressão em campo"
+              loading="lazy"
+            />
+            <img
+              src="fotos/img/fisio-4.jpg"
+              alt="Fisioterapeuta avaliando o ombro de uma atleta na clínica"
+              loading="lazy"
+            />
+          </div>
+          <div class="reveal">
+            <p class="eyebrow">Integrada ao treino</p>
+            <h2 class="section-title" style="margin-bottom: 24px">
+              O fisioterapeuta <span class="hl">fala com o professor</span>.
+            </h2>
+            <p style="color: var(--muted)">
+              Na Playmakerz a fisioterapia não acontece isolada: ela conversa
+              com o plano de treino do One to One e do PKZ. O que foi tratado
+              hoje orienta o que será treinado amanhã.
+            </p>
+            <aside class="callout">
+              <h3>Exemplo · dor no joelho</h3>
+              <p>
+                Em vez de parar de treinar, o fisioterapeuta identifica a causa
+                e passa ao professor os exercícios que podem continuar, os que
+                devem ser adaptados e o que reforçar para o joelho voltar a
+                render.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Como funciona (lista ordenada de etapas) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Como funciona</p>
+            <h2 class="section-title" style="max-width: 640px">
+              Da avaliação à alta, com acompanhamento em cada etapa.
+            </h2>
+          </div>
+          <ol class="grid-4 steps">
+            <li class="card reveal">
+              <span class="step-num">01</span>
+              <h3>Avaliação</h3>
+              <p>
+                Conversa sobre o histórico e testes de movimento, força e
+                mobilidade.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num">02</span>
+              <h3>Plano de tratamento</h3>
+              <p>
+                Objetivos e prazos definidos junto com você, sob medida para o
+                seu caso.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num">03</span>
+              <h3>Sessões</h3>
+              <p>
+                Terapia manual, exercícios e recursos de recuperação, com
+                registro de cada sessão.
+              </p>
+            </li>
+            <li class="card reveal">
+              <span class="step-num">04</span>
+              <h3>Alta e prevenção</h3>
+              <p>
+                Retorno gradual ao treino e um plano para evitar que a lesão
+                volte.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Equipe: cada foto com legenda (figure + figcaption) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Nossa equipe</p>
+            <h2 class="section-title">Quem cuida de você</h2>
+          </div>
+          <div class="grid-3">
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="fotos/img/prof-carla.jpg"
+                  alt="Carla Menezes"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Carla Menezes</h3>
+                <span class="role">Fisioterapeuta · Reabilitação</span>
+                <span class="exp">10 anos de experiência</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="fotos/img/prof-henrique.jpg"
+                  alt="Marcelo Duarte"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Marcelo Duarte</h3>
+                <span class="role">Fisioterapeuta · Esportiva</span>
+                <span class="exp">12 anos de experiência</span>
+              </figcaption>
+            </figure>
+            <figure class="team-card reveal">
+              <div class="photo">
+                <img
+                  src="fotos/img/prof-eduardo.jpg"
+                  alt="Lucas Prado"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="info">
+                <h3>Lucas Prado</h3>
+                <span class="role">Fisioterapeuta · Prevenção</span>
+                <span class="exp">8 anos de experiência</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Depoimentos -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <p class="eyebrow">Depoimentos</p>
+            <h2 class="section-title">Quem se recuperou, recomenda</h2>
+          </div>
+          <div class="grid-3">
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Depois da cirurgia no joelho achei que não voltaria a treinar.
+                O plano foi gradual e hoje estou melhor do que antes.”
+              </p>
+              <p class="quote-author">
+                <strong>Ricardo S.</strong><span>Paciente há 1 ano</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “O mais legal é que o fisio e o professor trocam informação. Meu
+                treino se adaptou na mesma semana.”
+              </p>
+              <p class="quote-author">
+                <strong>Fernanda A.</strong><span>Aluna One to One</span>
+              </p>
+            </article>
+            <article class="card quote reveal">
+              <span class="chev"></span>
+              <p class="quote-text">
+                “Meu filho voltou a jogar sem medo depois da lesão no tornozelo,
+                e ainda aprendeu a se prevenir.”
+              </p>
+              <p class="quote-author">
+                <strong>Paulo H.</strong><span>Pai de atleta · futebol</span>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Perguntas frequentes: lista descritiva (pergunta em dt, resposta em dd) -->
+      <section class="section">
+        <div class="container">
+          <div class="faq">
+            <p class="eyebrow">Perguntas frequentes</p>
+            <h2 class="section-title">Tire suas dúvidas</h2>
+            <dl class="faq-list">
+              <div class="faq-item open">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="true">
+                    Preciso ser aluno para fazer fisioterapia?
+                    <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Não. A fisioterapia atende também quem não treina na
+                    Playmakerz. Para alunos, a vantagem é a integração direta com
+                    o plano de treino.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Como é a primeira consulta? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    É uma avaliação com conversa sobre o seu histórico e testes
+                    de movimento. Ao final você sai com um plano de tratamento e
+                    uma previsão de prazos.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Atendem crianças e adolescentes? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Sim. Atendemos os atletas do PKZ Lab e outros jovens
+                    esportistas, com acompanhamento próximo dos responsáveis.
+                  </p>
+                </dd>
+              </div>
+              <div class="faq-item">
+                <dt>
+                  <button class="faq-q" type="button" aria-expanded="false">
+                    Quais são os valores? <span class="chev"></span>
+                  </button>
+                </dt>
+                <dd class="faq-a">
+                  <p>
+                    Os valores dependem do tratamento e do número de sessões.
+                    Veja os <a class="hl" href="planos.html">planos</a> e fale
+                    com a gente para montar o ideal para o seu caso.
+                  </p>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chamada final para agendamento -->
+      <section class="cta">
+        <img
+          class="deco-chevrons"
+          src="fotos/img/chevrons.svg"
+          alt=""
+          width="140"
+          height="70"
+          style="left: 24px; top: 24px"
+        />
+        <div class="container reveal">
+          <h2>Cuide do seu corpo com quem entende de movimento.</h2>
+          <p>
+            Agende uma avaliação e comece o seu plano de recuperação e
+            prevenção.
+          </p>
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/5521972657266" data-whatsapp="Olá! Quero agendar uma avaliação de fisioterapia."
+              >Agendar avaliação</a
+            >
+            <a class="btn btn-ghost" href="planos.html">Conhecer os planos</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé: contato, links e copyright -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img
+              class="logo"
+              src="fotos/img/logo-playmakerz.png"
+              alt="Playmakerz"
+              width="140"
+              height="32"
+              loading="lazy"
+            />
+            <p>
+              Uma empresa, duas formas de aplicar a mesma metodologia.
+              Transformamos potencial em performance — para cada idade e cada
+              esporte.
+            </p>
+            <address class="addr">Barra da Tijuca · Rio de Janeiro</address>
+          </div>
+          <nav aria-labelledby="rodape-marcas">
+            <h2 id="rodape-marcas">Marcas</h2>
+            <ul>
+              <li><a href="one-to-one.html">One-to-One Studio</a></li>
+              <li><a href="pkz.html">PKZ · Playmakerz</a></li>
+              <li><a href="fisioterapia.html">Fisioterapia</a></li>
+              <li><a href="planos.html">Planos</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-acesso">
+            <h2 id="rodape-acesso">Acesso</h2>
+            <ul>
+              <li>
+                <a href="agendar-one-to-one.html">Agendar · One-to-One</a>
+              </li>
+              <li><a href="agendar-pkz.html">Agendar · PKZ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <time datetime="2026">2026</time> PKZ One-to-One. Todos os
+            direitos reservados.
+          </p>
+          <p class="tag">Do potencial à performance</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
